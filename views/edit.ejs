@@ -1,0 +1,39 @@
+<%- include("layout") %>
+
+<h2 class="mb-4">Edit Student</h2>
+
+<form action="/edit/<%= student._id %>" method="POST">
+
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input name="name" class="form-control" value="<%= student.name %>" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Roll No</label>
+    <input name="roll" type="number" class="form-control" value="<%= student.roll %>" required>
+  </div>
+
+  <h5>Marks</h5>
+
+  <div class="mb-2">
+    <label>English</label>
+    <input class="form-control" name="english" type="number" value="<%= student.marks.english %>">
+  </div>
+
+  <div class="mb-2">
+    <label>Maths</label>
+    <input class="form-control" name="maths" type="number" value="<%= student.marks.maths %>">
+  </div>
+
+  <div class="mb-2">
+    <label>Science</label>
+    <input class="form-control" name="science" type="number" value="<%= student.marks.science %>">
+  </div>
+
+  <button class="btn btn-primary mt-3">Update</button>
+</form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<%- include("layout") %>
+
+<h2 class="mb-4">Students Marksheet</h2>
+
+<a href="/add" class="btn btn-primary mb-3">Add Student</a>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Name</th>
+    <th>Roll No</th>
+    <th>English</th>
+    <th>Maths</th>
+    <th>Science</th>
+    <th>Actions</th>
+  </tr>
+
+  <% students.forEach(s => { %>
+    <tr>
+      <td><%= s.name %></td>
+      <td><%= s.roll %></td>
+      <td><%= s.marks.english %></td>
+      <td><%= s.marks.maths %></td>
+      <td><%= s.marks.science %></td>
+      <td>
+        <a href="/edit/<%= s._id %>" class="btn btn-warning btn-sm">Edit</a>
+        <a href="/delete/<%= s._id %>" class="btn btn-danger btn-sm">Delete</a>
+      </td>
+    </tr>
+  <% }) %>
+</table>
+
+</div>
+</body>
+</html>
